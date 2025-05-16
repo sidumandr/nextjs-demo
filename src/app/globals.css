@@ -28,6 +28,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  
 }
 
 a {
@@ -39,4 +40,13 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px; /* maksimum genişlik */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }

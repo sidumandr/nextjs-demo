@@ -1,0 +1,19 @@
+.surveyMain {
+  display: grid;
+  flex-direction: column;
+  position: relative;
+  
+}
+
+.surveyMain h1 {
+  font-size: 2rem;
+  color: rgb(101, 101, 213);
+}
+
+.surveyMain p {
+  font-size: 1rem;
+  color: #ececec;
+  line-height: 1.5;
+}
+
+
