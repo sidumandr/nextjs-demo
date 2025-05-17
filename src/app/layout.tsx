@@ -1,6 +1,13 @@
-import Navbar from './components/navbar/Navbar';
-import Footer from './components/footer/Footer';
-import './globals.css';
+"use client";
+
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
+import "./globals.css";
+import { ReactNode } from "react";
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
+import { Toaster } from "react-hot-toast";
+import styles from "./page.module.css";
 
 export default function RootLayout({
   children,
@@ -9,10 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body className='container'>
+      <body className={styles.page}>
         <Navbar />
-        <main>{children}</main>
+        <Provider store={store}>{children}</Provider>
         <Footer />
+        <Toaster position="bottom-center" />
       </body>
     </html>
   );
