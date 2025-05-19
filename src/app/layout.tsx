@@ -17,10 +17,12 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <body className={styles.page}>
-        <Navbar />
-        <Provider store={store}>{children}</Provider>
-        <Footer />
-        <Toaster position="bottom-center" />
+        <Provider store={store}>
+          <Navbar />
+          <Provider store={store}>{children}</Provider>
+          <Footer />
+          <Toaster position="bottom-center" />
+        </Provider>
       </body>
     </html>
   );

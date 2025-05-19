@@ -6,13 +6,16 @@ import { useDispatch } from "react-redux";
 import { addSurvey } from "@/redux/surveySlice";
 import { useRouter } from "next/navigation"; // isteğe bağlı yönlendirme için
 import toast from "react-hot-toast";
+import { RootState } from "@/redux/store";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { current } from "@reduxjs/toolkit";
 
 export default function NewSurvey() {
   const dispatch = useDispatch();
   const router = useRouter(); // isteğe bağlı yönlendirme
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -34,6 +37,13 @@ export default function NewSurvey() {
     setDescription("");
     router.push("/survey");
   };
+
+  const currentUser = useSelector((state: RootState) => state.auth.currentUser);
+  useEffect(() => {
+    if (!currentUser || currentUser.role !== "admin") {
+      router.push("/unauthorized");
+    }
+  }, [currentUser, router]);
 
   return (
     <div className={styles.page}>

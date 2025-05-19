@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import confirmStyles from "@/app/confirm/confirm.module.css";
-import detailStyles from "@/app/survey/[id]/detail.module.css";
+import { useRouter } from "next/router";
 
 export default function Survey() {
   // Redux store'dan anket listesini çekiyoruz
