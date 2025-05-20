@@ -2,58 +2,97 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 15rem;
+  padding: 40px;
+  min-height: 100vh;
+  background-color: #f9f9f9;
 }
 
 .formContainer {
-  max-width: 600px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-}
-
-.formContainer h1 {
-  color: black;
-  margin-bottom: 15px;
+  max-width: 800px;
+  overflow-y: auto;
+  max-height: 90vh;
 }
 
 .formGroup {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
-.formGroup label {
-  color: black;
+.formContainer h1 {
+  color: rgb(52, 52, 52);
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: rgb(98, 98, 98);
+  font-style: italic;
 }
 
 .input,
 .textarea {
   width: 100%;
-  padding: 8px;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  color: black;
-  margin: 4px 0px;
-  outline: none;
-  border: 1px solid rgba(128, 128, 128, 0.456);
-  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0);
   resize: none;
-}
-
-.button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
-  border: 1px solid black;
-  border-radius: 10px;
   color: black;
-  background-color: #ffffff;
-   transition: background-color 0.5s ease, color 0.3s ease;
 }
 
+.input:focus, .textarea:focus {
+  outline: none;
+}
+
+.questionsContainer {
+  margin-top: 20px;
+}
+
+.questionRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.addButton,
+.removeButton,
+.button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #0070f3;
+  color: white;
+}
+
+.addButton:hover,
 .button:hover {
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
+  background-color: #00326a;
+}
+
+.removeButton {
+  background-color: #e00;
+}
+
+.removeButton:hover {
+  background-color: rgb(131, 2, 2);
+}
+
+.usersContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.userCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: black;
 }

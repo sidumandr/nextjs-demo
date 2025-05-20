@@ -74,7 +74,7 @@ export default function Survey() {
                 marginRight: "1rem",
               }}
             >
-              Anketi Görüntüle
+              Anket Durumunu Görüntüle
             </Link>
             <Link
               href={`survey/edit/${survey.id}`}

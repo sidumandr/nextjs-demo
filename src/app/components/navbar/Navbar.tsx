@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const currentUser = useSelector((state: RootState) => state.auth.currentUser);
+
   return (
     <nav className={styles.navbar}>
       <Link href="/" className={styles.link}>
@@ -17,7 +18,12 @@ const Navbar = () => {
         Anketlerim
       </Link>
       {currentUser?.role === "admin" && (
-        <a href="/survey/newSurvey">Anket Oluştur</a>
+        <Link href="/survey/newSurvey" className={styles.link}>
+          Anket Oluştur
+        </Link>
+      )}
+      {currentUser && (
+        <span className={styles.user}>Merhaba, {currentUser.username}</span>
       )}
     </nav>
   );
