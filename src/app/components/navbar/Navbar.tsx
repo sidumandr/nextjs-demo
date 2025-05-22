@@ -52,9 +52,14 @@ const Navbar = () => {
         </Link>
       )}
       {currentUser?.role === "admin" && (
-        <Link href="/survey/newSurvey" className={styles.link}>
-          Anket Oluştur
-        </Link>
+        <>
+          <Link href="/survey/newSurvey" className={styles.link}>
+            Anket Oluştur
+          </Link>
+          <Link href="/admin/users" className={styles.link}>
+            Kullanıcı Listesi
+          </Link>
+        </>
       )}
 
       {showGreeting && (
